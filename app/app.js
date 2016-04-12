@@ -3,18 +3,28 @@
 // All stuff below is just to show you how it works.
 // -----------------------------------------------------
 
-// Browser modules are imported through new ES6 syntax.
-//import { greet } from './hello_world/hello_world';
+//var LocalAPI = require("./localapi/local");
+
 // Node modules are required the same way as always.
 var os = require('os');
 
 // window.env contains data from config/env_XXX.json file.
 var envName = window.env.name;
 
+new Vue({
+  components: {
+  	'alert': VueStrap.alert
+  },
+  el: '#pinpoint',
+  data: {
+    message: 'Hello Vue.js!',
+    showRight: false
+  }
+})
 
-//var pinpointApp = angular.module('pinpoint', []);
+var pinpointMap = L.map('map').setView([34.5259,-92.1588], 7);
 
-
-document.getElementById('greet').innerHTML = greet();
-document.getElementById('platform-info').innerHTML = os.platform();
-document.getElementById('env-name').innerHTML = envName;
+//L.tileLayer("http://localhost:1337/api/tiles/{z}/{x}/{y}.png", {
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(pinpointMap);

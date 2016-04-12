@@ -5,13 +5,17 @@
     <title>Pinpoint</title>
 
     <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
-
+    <link href="./stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <!-- Scripts giving you few extra things in NW.js -->
     <script src="vendor/nw-boilerplate/window_state.js"></script>
     <script src="vendor/nw-boilerplate/context_menu.js"></script>
     <script src="vendor/nw-boilerplate/external_links.js"></script>
     <script src="vendor/nw-boilerplate/dev_helper.js"></script>
     <script src="vendor/nw-boilerplate/env_config.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-strap/dist/vue-strap.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script>
         (function () {
             var gui = require('nw.gui');
@@ -34,14 +38,8 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1 id="greet"></h1>
-        <p class="subtitle">
-            Welcome to <a href="https://github.com/nwjs/nw.js" class="js-external-link">NW.js</a> app running on this magnificent <strong id="platform-info"></strong> machine.
-        </p>
-        <p class="subtitle">
-            You are in <strong id="env-name"></strong> environment.
-        </p>
+    <div class="map-container" id="pinpoint">
+        <div id="map"></div>
     </div>
 
 </body>
