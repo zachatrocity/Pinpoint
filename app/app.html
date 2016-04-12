@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pinpoint</title>
+
+    <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
+
+    <!-- Scripts giving you few extra things in NW.js -->
+    <script src="vendor/nw-boilerplate/window_state.js"></script>
+    <script src="vendor/nw-boilerplate/context_menu.js"></script>
+    <script src="vendor/nw-boilerplate/external_links.js"></script>
+    <script src="vendor/nw-boilerplate/dev_helper.js"></script>
+    <script src="vendor/nw-boilerplate/env_config.js"></script>
+    <script>
+        (function () {
+            var gui = require('nw.gui');
+            var win = gui.Window.get();
+
+            // Create default menu items for OSX
+            if (process.platform === 'darwin') {
+                var mb = new gui.Menu({ type: "menubar" });
+                mb.createMacBuiltin(gui.App.manifest.productName);
+                win.menu = mb;
+            }
+        }());
+    </script>
+
+    <!-- Load real app code -->
+    <script src="vendor/require.js"></script>
+    <script>
+        requirejs(['app'], function (app) {});
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="greet"></h1>
+        <p class="subtitle">
+            Welcome to <a href="https://github.com/nwjs/nw.js" class="js-external-link">NW.js</a> app running on this magnificent <strong id="platform-info"></strong> machine.
+        </p>
+        <p class="subtitle">
+            You are in <strong id="env-name"></strong> environment.
+        </p>
+    </div>
+
+</body>
+</html>
