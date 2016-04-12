@@ -8,6 +8,15 @@
 // Node modules are required the same way as always.
 var os = require('os');
 
+var gui = require('nw.gui');
+var win = gui.Window.get();
+
+// Create default menu items for OSX
+if (process.platform === 'darwin') {
+    var mb = new gui.Menu({ type: "menubar" });
+    mb.createMacBuiltin(gui.App.manifest.productName);
+    win.menu = mb;
+}
 // window.env contains data from config/env_XXX.json file.
 var envName = window.env.name;
 

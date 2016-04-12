@@ -16,19 +16,6 @@
     <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="./node_modules/vue-strap/dist/vue-strap.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script>
-        (function () {
-            var gui = require('nw.gui');
-            var win = gui.Window.get();
-
-            // Create default menu items for OSX
-            if (process.platform === 'darwin') {
-                var mb = new gui.Menu({ type: "menubar" });
-                mb.createMacBuiltin(gui.App.manifest.productName);
-                win.menu = mb;
-            }
-        }());
-    </script>
 
     <!-- Load real app code -->
     <script src="vendor/require.js"></script>
