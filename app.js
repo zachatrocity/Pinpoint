@@ -21,7 +21,8 @@ var App = new Vue({
         'radio-group': VueStrap.radioGroup 
     },
     data: {
-    	showMenu: false
+    	showMenu: false,
+        currentMarker: ''
     }
 });
 
@@ -31,4 +32,19 @@ var pinpointMap = L.map('map').setView([34.5259,-92.1588], 7);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(pinpointMap);
+
+pinpointMap.on('click', function(e) {
+    //alert(e.latlng);
+});
+
+pinpointMap.on('contextmenu',function(e){
+    if(pinpointMap._zoom >= 13){
+
+        pinpointMap.removeLayer(App.$get('currentMarker'));
+        App.$set('currentMarker',L.marker([e.latlng.lat, e.latlng.lng]).addTo(pinpointMap));
+        App.$get('currentMarker').bindPopup("<strong>Latitude:</strong>" + " " +  e.latlng.lat + "<br>" + "<strong>Longitude: </strong>" + " " + e.latlng.lng + "<br>").openPopup();
+    }
+});
+
+
 
