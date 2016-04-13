@@ -28,7 +28,18 @@
 			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 			  </panel>
 			  <panel header="Settings" id="settings-panel">
-			    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			  	<table>
+			  		<tr>
+			  			<td><h4 class="settings-label">Tiles: </h4></td>
+			  			<td>
+			  				<radio-group :value.sync="radioValue" type="primary">
+							  <radio value="off">Off</radio>
+							  <radio value="right">On</radio>
+							</radio-group>
+			  			</td>
+			  		</tr>
+			  		<tr></tr>
+			  	</table>
 			  </panel>
 			  <panel header="Help" id="help-panel">
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.

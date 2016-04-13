@@ -13,10 +13,12 @@ if (process.platform === 'darwin') {
 var App = new Vue({
 	el: '#pinpoint',
     components: {
-    	alert: VueStrap.alert,
-    	sidebar: VueStrap.aside,
-        accordion : VueStrap.accordion,
-        panel: VueStrap.panel 
+    	'alert': VueStrap.alert,
+    	'sidebar': VueStrap.aside,
+        'accordion' : VueStrap.accordion,
+        'panel': VueStrap.panel,
+        'radio': VueStrap.radioBtn,
+        'radio-group': VueStrap.radioGroup 
     },
     data: {
     	showMenu: false

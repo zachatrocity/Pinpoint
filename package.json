@@ -1,9 +1,9 @@
 {
-  "name": "vueapp",
-  "productName": "VueApp",
-  "description": "A simple boilerplate to create a nw.js app with Vue.js",
+  "name": "pinpoint",
+  "productName": "Pinpoint",
+  "description": "A simple GIS application built with nw.js",
   "version": "0.1.0",
-  "author": "My Name <myname@provider.com>",
+  "author": "Zach Russell <zrussell1@harding.edu>",
   "main": "app.html",
   "window": {
     "icon": "icon.png",
