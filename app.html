@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NW Vue Boilerplate</title>
+
+    <link href="./build/css/main.css" rel="stylesheet" type="text/css">
+    <link href="./build/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./libs/font-awesome-4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./libs/leaflet/leaflet.css" />
+    <!-- Load real app code -->
+    <script src="node_modules/nw-dev/lib/dev.js"></script> 
+</head>
+<body>
+    <div class="map-container" id="pinpoint">
+    <button id="menuButton" class="btn btn-default" 
+		@click="showMenu = true"><i class="fa fa-bars" aria-hidden="true"></i></button>
+
+		<sidebar :show.sync="showMenu" placement="right" header="Pinpoint" :width="350">
+			<accordion :one-at-atime="true">
+			  <panel header="Locator" :is-open="true" id="locator-panel">
+			    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+			  </panel>
+			  <panel header="Tools" id="tools-panel">
+			    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+			  </panel>
+			  <panel header="Settings" id="settings-panel">
+			    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			  </panel>
+			  <panel header="Help" id="help-panel">
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+			  </panel>
+			</accordion>
+		</sidebar>
+        <div id="map"></div>
+    </div>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-strap/dist/vue-strap.js"></script>
+    <script src="./libs/leaflet/leaflet.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
