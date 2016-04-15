@@ -1,6 +1,7 @@
 var os = require('os');
 var gui = require('nw.gui');
 var win = gui.Window.get();
+var LocalAPI = require("./libs/localapi/local");
 
 // Create default menu items for OSX
 if (process.platform === 'darwin') {
@@ -26,12 +27,28 @@ var App = new Vue({
     }
 });
 
-var pinpointMap = L.map('map').setView([34.5259,-92.1588], 7);
+var pinpointMap = L.map('map', {zoomControl:false}).setView([34.5259,-92.1588], 7);
 
-//L.tileLayer("http://localhost:1337/api/tiles/{z}/{x}/{y}.png", {
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer("http://localhost:1337/api/tiles/{z}/{x}/{y}.png", {
+    maxZoom: 17
 }).addTo(pinpointMap);
+
+//search control
+var searchControl = L.control.search({});
+searchControl.addTo(pinpointMap);
+
+// draw control
+var drawnItems = new L.FeatureGroup();
+pinpointMap.addLayer(drawnItems);
+
+// Initialise the draw control and pass it the FeatureGroup of editable layers
+var drawControl = new L.Control.Draw({
+    edit: {
+        featureGroup: drawnItems
+    }
+});
+pinpointMap.addControl(drawControl);
+
 
 pinpointMap.on('click', function(e) {
     //alert(e.latlng);
