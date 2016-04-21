@@ -5,8 +5,9 @@ A GIS Desktop application written in nw.js with leaflet.js and Vue.js. The purpo
 ![Pinpoint Screenshot](https://raw.githubusercontent.com/zachatrocity/Pinpoint/master/screenshot.png "Pinpoint Screenshot")
 
 #Install
--`git clone https://github.com/zachatrocity/Pinpoint.git`
--`npm install`
+`git clone https://github.com/zachatrocity/Pinpoint.git`
+
+`npm install`
 
 #Running
 `gulp dev` to run the development enviornment
@@ -26,12 +27,12 @@ Then in `tilecache/api/tiles.js` is where we check for the tile in the database 
 could very easily add functionality to update tiles and save them from the web. You'll want to check with your tile server's policies on downloading tiles.
 
 #Libraries
--[nw.js](http://nwjs.io/)
--[nw-builder](https://github.com/nwjs/nw-builder)
--[innosetup-compiler](https://github.com/felicienfrancois/node-innosetup-compiler)
--[Vue.js](https://vuejs.org/)
--[Leaflet.js](http://leafletjs.com/)
--[Leaflet.draw](https://github.com/Leaflet/Leaflet.draw)
--[leaflet-search-control](https://github.com/zachatrocity/leaflet-search-control)
+	-[nw.js](http://nwjs.io/)
+	-[nw-builder](https://github.com/nwjs/nw-builder)
+	-[innosetup-compiler](https://github.com/felicienfrancois/node-innosetup-compiler)
+	-[Vue.js](https://vuejs.org/)
+	-[Leaflet.js](http://leafletjs.com/)
+	-[Leaflet.draw](https://github.com/Leaflet/Leaflet.draw)
+	-[leaflet-search-control](https://github.com/zachatrocity/leaflet-search-control)
 
 
