@@ -4,9 +4,6 @@ A GIS Desktop application written in nw.js with leaflet.js and Vue.js. The purpo
 
 ![Pinpoint Screenshot](https://raw.githubusercontent.com/zachatrocity/Pinpoint/master/screenshot.png "Pinpoint Screenshot")
 
-#Demo
-- Download and run the windows installer found here: `installer/PinpointInstaller_0.0.1.0.exe`
-
 #Install
 -`git clone https://github.com/zachatrocity/Pinpoint.git`
 -`npm install`
