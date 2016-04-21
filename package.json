@@ -1,14 +1,14 @@
 {
   "name": "pinpoint",
   "productName": "Pinpoint",
-  "description": "A simple GIS application built with nw.js",
+  "description": "A simple GIS application built with nw.js and Vue.js",
   "version": "0.1.0",
   "author": "Zach Russell <zrussell1@harding.edu>",
   "main": "app.html",
   "window": {
     "icon": "icon.png",
     "show": true,
-    "toolbar": false,
+    "toolbar": true,
     "width": 1000,
     "height": 600,
     "min_width": 800,
@@ -16,16 +16,11 @@
     "position": "center"
   },
   "devDependencies": {
-    "babel-core": "^6.3.17",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-transform-runtime": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-runtime": "^5.8.34",
+    "adm-zip": "^0.4.7",
     "css-loader": "^0.23.0",
     "gulp": "^3.8.8",
     "gulp-stylus": "^2.3.1",
     "nw": "^0.12.3",
-    "nw-dev": "^1.3.1",
     "q": "^1.4.1",
     "tree-kill": "^1.0.0"
   },
@@ -33,11 +28,12 @@
     "express": "^4.13.4",
     "leaflet-draw": "^0.3.0",
     "proj4": "^2.3.14",
-    "sqlite3": "^3.1.3",
+    "spatialite": "^0.0.6",
     "vue": "^1.0.21",
     "vue-strap": "^1.0.7"
   },
   "scripts": {
-    "postinstall": "cd ./node_modules/sqlite3 && node-pre-gyp rebuild --runtime=node-webkit --target=0.12.3 --target_arch=x64"
+    "postinstall": "npm buildsqlte && gulp unziptilecache",
+    "buildsqlite": "cd ./node_modules/spatialite/node_modules/sqlite3 && node-pre-gyp rebuild --runtime=node-webkit --target=0.12.3 --target_arch=x64"
   }
 }

@@ -1,7 +1,8 @@
 var os = require('os');
 var gui = require('nw.gui');
 var win = gui.Window.get();
-var LocalAPI = require("./libs/localapi/local");
+var http = require('http');
+var LocalAPI = require("./tilecache/local");
 
 // Create default menu items for OSX
 if (process.platform === 'darwin') {
@@ -9,6 +10,7 @@ if (process.platform === 'darwin') {
     mb.createMacBuiltin(gui.App.manifest.productName);
     win.menu = mb;
 }
+
 
 //setup Vue
 var App = new Vue({
@@ -30,7 +32,8 @@ var App = new Vue({
 var pinpointMap = L.map('map', {zoomControl:false}).setView([34.5259,-92.1588], 7);
 
 L.tileLayer("http://localhost:1337/api/tiles/{z}/{x}/{y}.png", {
-    maxZoom: 17
+    maxZoom: 17,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(pinpointMap);
 
 //search control
@@ -56,7 +59,6 @@ pinpointMap.on('click', function(e) {
 
 pinpointMap.on('contextmenu',function(e){
     if(pinpointMap._zoom >= 13){
-
         pinpointMap.removeLayer(App.$get('currentMarker'));
         App.$set('currentMarker',L.marker([e.latlng.lat, e.latlng.lng]).addTo(pinpointMap));
         App.$get('currentMarker').bindPopup("<strong>Latitude:</strong>" + " " +  e.latlng.lat + "<br>" + "<strong>Longitude: </strong>" + " " + e.latlng.lng + "<br>").openPopup();

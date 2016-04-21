@@ -3,6 +3,7 @@ var stylus = require('gulp-stylus')
 var nw = require('nw');
 var childProcess = require('child_process');
 var kill = require('tree-kill');
+var AdmZip = require('adm-zip');
 
 gulp.task('css', function () {
   return gulp.src('./css/**.css')
@@ -24,6 +25,11 @@ gulp.task('run', function(){
     var app = childProcess.spawn(nw.findpath(), ['./'], {
         stdio: 'inherit'
     });
+})
+
+gulp.task('unziptilecache', function(){
+  var zip = new AdmZip("./tilecache/TileCache.zip");
+  zip.extractAllTo("./tilecache/",true);
 })
 
 gulp.task('build', ['stylus', 'css'])
