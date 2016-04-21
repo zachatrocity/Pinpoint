@@ -5,3 +5,5 @@ Thumbs.db
 /build/
 /releases/
 /tmp/
+cache/
+tilecache/TileCache.sqlite

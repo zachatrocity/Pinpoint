@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var http = require('http');
-var sqlite = require("spatialite");
+var sqlite = require("sqlite3");
 var fs = require('fs');
 //node-pre-gyp rebuild --runtime=node-webkit --target=0.12.3 --target_arch=ia32
 var db = new sqlite.Database('./tilecache/TileCache.sqlite');
