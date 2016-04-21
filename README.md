@@ -4,6 +4,9 @@ A GIS Desktop application written in nw.js with leaflet.js and Vue.js. The purpo
 
 ![Pinpoint Screenshot](https://raw.githubusercontent.com/zachatrocity/Pinpoint/master/screenshot.png "Pinpoint Screenshot")
 
+#Demo
+- Download and run the windows installer found here: `installer/PinpointInstaller_0.0.1.0.exe`
+
 #Install
 -`git clone https://github.com/zachatrocity/Pinpoint.git`
 -`npm install`
@@ -31,4 +34,7 @@ could very easily add functionality to update tiles and save them from the web. 
 -[innosetup-compiler](https://github.com/felicienfrancois/node-innosetup-compiler)
 -[Vue.js](https://vuejs.org/)
 -[Leaflet.js](http://leafletjs.com/)
+-[Leaflet.draw](https://github.com/Leaflet/Leaflet.draw)
+-[leaflet-search-control](https://github.com/zachatrocity/leaflet-search-control)
+
 

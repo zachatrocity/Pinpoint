@@ -58,14 +58,14 @@ Name: "en"; MessagesFile: ".\English.isl"
 
 
 [Files]
-Source: "..\build\Pinpoint\win32\locales"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\build\Pinpoint\win32\pdf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\nw.pak"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\nw.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\libGLESv2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\libEGL.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\icudtl.dat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\build\Pinpoint\win32\d3dcompiler_47.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\locales"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\build\nw\win32\pdf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\nw.pak"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\nw.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\libGLESv2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\libEGL.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\icudtl.dat"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\nw\win32\d3dcompiler_47.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "pinpoint.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
